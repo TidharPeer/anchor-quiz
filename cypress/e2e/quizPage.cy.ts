@@ -14,7 +14,7 @@ describe('Quiz Page', () => {
     cy.get('button').contains("Next").click();
     cy.get('[type="radio"]').first().should("not.be.checked");
     cy.get('[type="radio"]').last().check();
-    cy.get('button').contains("Prev").click();
+    cy.get('button').contains("Previous").click();
     cy.get('[type="radio"]').first().should("be.checked");
     cy.get('[type="radio"]').last().should("not.be.checked");
     cy.get('button').contains("Next").click();

@@ -54,13 +54,13 @@ const QuizPage = () => {
         </FlexColumn>
         <FlexRow height="80px" flex="0 0 80px" justify="space-around" $alignItems="center">
           <ConditionalRender condition={page > 0 && page < quizLength}>
-            <button onClick={() => setPage(page - 1)}>Prev</button>
+            <button onClick={() => setPage(page - 1)}>Previous</button>
           </ConditionalRender>
           <ConditionalRender condition={page < quizLength - 1}>
-            <button onClick={() => setPage(page + 1)}>Next</button>
+            <button disabled={selectedAnswers[page] === undefined} onClick={() => setPage(page + 1)}>Next</button>
           </ConditionalRender>
           <ConditionalRender condition={page === quizLength - 1}>
-            <button onClick={() => setPage(page + 1)}>Submit</button>
+            <button disabled={selectedAnswers[page] === undefined} onClick={() => setPage(page + 1)}>Submit</button>
           </ConditionalRender>
         </FlexRow>
       </FlexColumn>
