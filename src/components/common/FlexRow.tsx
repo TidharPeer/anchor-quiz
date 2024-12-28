@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-const Container = styled.div<{ justify?: string; alignItems?: string; width?: string; height?: string; gap?: string; flex?: string }>`
+const Container = styled.div<{ justify?: string; $alignItems?: string; width?: string; height?: string; gap?: string; flex?: string }>`
   display: flex;
   flex-direction: row;
   min-width: 0;
   justify-content: ${({ justify }) => justify};
-  align-items: ${({ alignItems }) => alignItems};
+  align-items: ${({ $alignItems }) => $alignItems};
   width: ${({ width }) => width};
   height: ${({ height }) => height};
   gap: ${({ gap }) => gap};
@@ -14,7 +14,7 @@ const Container = styled.div<{ justify?: string; alignItems?: string; width?: st
 `;
 interface FlexRowProps {
   justify?: string;
-  alignItems?: string;
+  $alignItems?: string;
   width?: string;
   height?: string;
   flex?: string;
@@ -23,9 +23,9 @@ interface FlexRowProps {
   children?: React.ReactNode;
 }
 
-const FlexRow = ({ justify, alignItems, width, height, flex, gap, className, children }: FlexRowProps) => {
+const FlexRow = ({ justify, $alignItems, width, height, flex, gap, className, children }: FlexRowProps) => {
   return (
-    <Container justify={justify} alignItems={alignItems} width={width} height={height} flex={flex} gap={gap} className={className}>
+    <Container justify={justify} $alignItems={$alignItems} width={width} height={height} flex={flex} gap={gap} className={className}>
       {children}
     </Container>
   )

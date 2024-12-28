@@ -25,10 +25,10 @@ const QuizPage = () => {
 
   return (
       <FlexColumn width="100vw" height="100vh">
-        <FlexRow height="80px" flex="0 0 80px" justify="center" alignItems="center">
+        <FlexRow height="80px" flex="0 0 80px" justify="center" $alignItems="center">
           <h1>{ quiz.title } - {page < quizLength ? `page ${page + 1}` : `Score`}</h1>
         </FlexRow>
-        <FlexColumn width="100%" flex="1 1 auto" justify="center" alignItems="center">
+        <FlexColumn width="100%" flex="1 1 auto" justify="center" $alignItems="center">
           <ConditionalRender condition={page < quizLength}>
             <FlexColumn gap="20px">
               <h2>{question?.text}</h2>
@@ -52,7 +52,7 @@ const QuizPage = () => {
             </FlexColumn>
           </ConditionalRender>
         </FlexColumn>
-        <FlexRow height="80px" flex="0 0 80px" justify="space-around" alignItems="center">
+        <FlexRow height="80px" flex="0 0 80px" justify="space-around" $alignItems="center">
           <ConditionalRender condition={page > 0 && page < quizLength}>
             <button onClick={() => setPage(page - 1)}>Prev</button>
           </ConditionalRender>
